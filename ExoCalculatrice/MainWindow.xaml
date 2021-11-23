@@ -1,0 +1,91 @@
+﻿<Window x:Class="ExoCalculatrice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExoCalculatrice"
+        mc:Ignorable="d"
+        Style="{DynamicResource MainWindowStyle}">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="120" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StatusBar>
+                <StatusBarItem HorizontalAlignment="Center">
+                    <TextBlock Text="Calculatrice V1.0" />
+                </StatusBarItem>
+            </StatusBar>
+            <Border Grid.Row="1" Style="{DynamicResource ScreenBorderStyle}">
+                <Viewbox HorizontalAlignment="Right" Margin="5,0">
+                    <TextBlock Text="0" />
+                </Viewbox>
+            </Border>
+            <Grid Grid.Row="2" Button.Click="OperationButton_Click">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <!-- Boutons Mémoire -->
+                <Grid Grid.ColumnSpan="4" Button.Click="MemoryButton_Click">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Content="MC" Style="{DynamicResource MemoryButtonStyle}" />
+                    <Button Grid.Row="0" Grid.Column="1" Content="M+" Style="{DynamicResource MemoryButtonStyle}" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="M-" Style="{DynamicResource MemoryButtonStyle}" />
+                    <Button Grid.Row="0" Grid.Column="3" Content="MR" Style="{DynamicResource MemoryButtonStyle}" />
+                </Grid>
+                <!-- Boutons Opération -->
+                <Button Grid.Row="1" Grid.Column="0" Content="C" Style="{DynamicResource OperationButtonStyle}" />
+                <Button Grid.Row="1" Grid.Column="1" Content="+/-" Style="{DynamicResource OperationButtonStyle}" />
+                <Button Grid.Row="1" Grid.Column="2" Content="/" Style="{DynamicResource OperationButtonStyle}" />
+                <Button Grid.Row="1" Grid.Column="3" Content="x" Style="{DynamicResource OperationButtonStyle}" />
+                <Button Grid.Row="2" Grid.Column="3" Content="-" Style="{DynamicResource OperationButtonStyle}" />
+                <Button Grid.Row="3" Grid.Column="3" Content="+" Style="{DynamicResource OperationButtonStyle}" />
+                <!-- Boutons Numérique -->
+                <Grid Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="4" Button.Click="NumericalButton_Click">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Content="7" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="0" Grid.Column="1" Content="8" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="9" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="1" Grid.Column="0" Content="4" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="1" Grid.Column="1" Content="5" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="6" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="2" Grid.Column="0" Content="1" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="2" Grid.Column="1" Content="2" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="2" Grid.Column="2" Content="3" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="0" Style="{DynamicResource NumericalButtonStyle}" />
+                    <Button Grid.Row="3" Grid.Column="2" Content="." Style="{DynamicResource NumericalButtonStyle}" />
+                </Grid>
+                <!-- Boutons Egale -->
+                <Button Grid.Row="4" Grid.Column="3" Grid.RowSpan="2" Content="=" Style="{DynamicResource EqualButtonStyle}" />
+            </Grid>            
+        </Grid>
+    </Grid>
+</Window>
